@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 app.get('/', (req, res) => {
   res.send(`
     <h1>Praktikum Azure App Service</h1>
-    <p>Aplikasi 1 berjalan.</p>
+    <p>Aplikasi berjalan.</p>
     <ul>
       <li><a href="/status">Cek Status</a></li>
       <li><a href="/profil">Cek Profil</a></li>
@@ -14,21 +14,29 @@ app.get('/', (req, res) => {
   `);
 });
 
-// Endpoint status
+// Endpoint status dengan tombol back
 app.get('/status', (req, res) => {
-  res.json({
-    status: 'running',
-    service: 'Azure App Service',
-    timestamp: new Date()
-  });
+  res.send(`
+    <h2>Status Aplikasi</h2>
+    <pre>${JSON.stringify({
+      status: 'running',
+      service: 'Azure App Service',
+      timestamp: new Date()
+    }, null, 2)}</pre>
+    <a href="/">⬅ Back to Home</a>
+  `);
 });
 
-// Endpoint profil
+// Endpoint profil dengan tombol back
 app.get('/profil', (req, res) => {
-  res.json({
-    mataKuliah: 'Komputasi Awan',
-    topik: 'Serverless Azure'
-  });
+  res.send(`
+    <h2>Profil</h2>
+    <pre>${JSON.stringify({
+      mataKuliah: 'Komputasi Awan',
+      topik: 'Serverless Azure'
+    }, null, 2)}</pre>
+    <a href="/">⬅ Back to Home</a>
+  `);
 });
 
 // Jalankan server
