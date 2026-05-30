@@ -36,6 +36,6 @@ jobs:
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'app-serverless-NIM' # <-- Ganti dengan nama App Service kamu
+          app-name: 'app-serverless-0920240031' # <-- Ganti dengan nama App Service kamu
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
           package: release.zip
