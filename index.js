@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 app.get('/', (req, res) => {
   res.send(`
     <h1>Praktikum Azure App Service</h1>
-    <p>Aplikasi berjalan.</p>
+    <p>Aplikasi 3 berjalan.</p>
     <ul>
       <li><a href="/status">Cek Status</a></li>
       <li><a href="/profil">Cek Profil</a></li>
